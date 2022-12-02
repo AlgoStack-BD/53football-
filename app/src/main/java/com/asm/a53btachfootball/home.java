@@ -47,7 +47,24 @@ public class home extends Fragment {
        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-                String url  = "https://cse53.algostackbd.com/liveupdate.php";
+        loadScore(Integer.parseInt("1"),view);
+        loadScore(Integer.parseInt("2"),view);
+        loadScore(Integer.parseInt("3"),view);
+        loadScore(Integer.parseInt("4"),view);
+        loadScore(Integer.parseInt("5"),view);
+        loadScore(Integer.parseInt("6"),view);
+        loadScore(Integer.parseInt("7"),view);
+        loadScore(Integer.parseInt("8"),view);
+        loadScore(Integer.parseInt("9"),view);
+        loadScore(Integer.parseInt("10"),view);
+        loadScore(Integer.parseInt("11"),view);
+        loadScore(Integer.parseInt("12"),view);
+        loadScore(Integer.parseInt("13"),view);
+        loadScore(Integer.parseInt("14"),view);
+        loadScore(Integer.parseInt("15"),view);
+
+
+       String url  = "https://cse53.algostackbd.com/liveupdate.php";
 
         JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
@@ -56,33 +73,21 @@ public class home extends Fragment {
 
                 try {
 
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
 
-                    for (int x=response.length()-1; x < response.length();x++){
-                        JSONObject jsonObject = response.getJSONObject(x);
+                        TextView matchNumber=view.findViewById(R.id.live_matchNum);
+                        TextView TeamOne= view.findViewById(R.id.live_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_tTwoScore);
+
 
                         String id = jsonObject.getString("id");
-                        String match_number = jsonObject.getString("match_number");
-                        String team_one = jsonObject.getString("team_one");
-                        String team_two = jsonObject.getString("team_two");
-                        String team_one_score = jsonObject.getString("team_one_score");
-                        String team_two_score = jsonObject.getString("team_two_score");
-
-
-
-                        hashMap= new HashMap<>();
-                        hashMap.put("id",id);
-                        hashMap.put("match_number",match_number);
-                        hashMap.put("team_one",team_one);
-                        hashMap.put("team_two",team_two);
-                        hashMap.put("team_one_score",team_one_score);
-                        hashMap.put("team_two_score",team_two_score);
-                        arrayList.add(hashMap);
-
-                    }
-
-                    Myadapter myAdapter = new Myadapter();
-                    listView.setAdapter(myAdapter);
-
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                        matchNumber.setText("Match : "+jsonObject.getString("match_number"));
 
 
 
@@ -100,21 +105,6 @@ public class home extends Fragment {
         });
         RequestQueue requestQueue  = Volley.newRequestQueue(getActivity());
         requestQueue.add(arrayRequest);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -139,19 +129,27 @@ public class home extends Fragment {
        match1.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               score_details.code ="1";
                startActivity(new Intent(getActivity(),score_details.class));
+
+
+
+
            }
        });
         match2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="2";
                 startActivity(new Intent(getActivity(),score_details.class));
+
 
             }
         });
         match3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="3";
                 startActivity(new Intent(getActivity(),score_details.class));
 
             }
@@ -159,72 +157,96 @@ public class home extends Fragment {
         match4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="4";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="5";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="6";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="7";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="8";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="8";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="10";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="11";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="12";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="13";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="14";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
         match15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score_details.code ="15";
+                startActivity(new Intent(getActivity(),score_details.class));
 
             }
         });
@@ -235,64 +257,201 @@ public class home extends Fragment {
     }
 
 
+    public void loadScore(int code,View view){
 
-    //----------------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------------
+        String url = "https://cse53.algostackbd.com/demo_data.php?i="+code;
 
-    private class Myadapter extends BaseAdapter {
-
-        @Override
-        public int getCount() {
-            return arrayList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater layoutInflater = getLayoutInflater();
-            View myView = layoutInflater.inflate(R.layout.card,null);
+        JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
 
 
+                try {
 
-            TextView matchNumber= myView.findViewById(R.id.live_matchNum);
-            TextView TeamOne= myView.findViewById(R.id.live_tOne);
-            TextView TeamTwo= myView.findViewById(R.id.live_tTwo);
-            TextView TeamOneScore= myView.findViewById(R.id.live_tOneScore);
-            TextView TeamTwoScore= myView.findViewById(R.id.live_tTwoScore);
+                    if(code==1){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_1_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_1_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_1_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_1_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                       else if(code==2){
+                           JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                           TextView TeamOne= view.findViewById(R.id.live_2_tOne);
+                           TextView TeamTwo= view.findViewById(R.id.live_2_tTwo);
+                           TextView TeamOneScore= view.findViewById(R.id.live_2_tOneScore);
+                           TextView TeamTwoScore= view.findViewById(R.id.live_2_tTwoScore);
+                           TeamOne.setText(jsonObject.getString("team_one"));
+                           TeamTwo.setText(jsonObject.getString("team_two"));
+                           TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                           TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                       }
+                    else if(code==3){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_3_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_3_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_3_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_3_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==4){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_4_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_4_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_4_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_4_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==5){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_5_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_5_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_5_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_5_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==6){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_6_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_6_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_6_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_6_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==7){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_7_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_7_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_7_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_7_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==8){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_8_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_8_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_8_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_8_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==9){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_9_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_9_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_9_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_9_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==10){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_2_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_10_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_10_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_10_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==11){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_11_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_11_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_11_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_11_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==12){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_12_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_12_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_12_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_12_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==13){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_13_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_13_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_13_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_13_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==14){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_14_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_14_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_14_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_14_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
+                    else if(code==15){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                        TextView TeamOne= view.findViewById(R.id.live_15_tOne);
+                        TextView TeamTwo= view.findViewById(R.id.live_15_tTwo);
+                        TextView TeamOneScore= view.findViewById(R.id.live_15_tOneScore);
+                        TextView TeamTwoScore= view.findViewById(R.id.live_15_tTwoScore);
+                        TeamOne.setText(jsonObject.getString("team_one"));
+                        TeamTwo.setText(jsonObject.getString("team_two"));
+                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
+                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
+                    }
 
-            HashMap<String,String> hashMap = arrayList.get(position);
-            String teamOne = hashMap.get("team_one");
-            String teamTwo = hashMap.get("team_two");
-            String teamOneScore = hashMap.get("team_one_score");
-            String teamTwoScore = hashMap.get("team_two_score");
-            String matchnum  = hashMap.get("match_number");
-
-            System.out.println("simple "+matchnum);
-            System.out.println("simple "+teamOne);
-            System.out.println("simple "+teamTwo);
-            System.out.println("simple "+teamOneScore);
-            System.out.println("simple "+teamTwoScore);
 
 
-            TeamOne.setText(teamOne);
-            TeamTwo.setText(teamTwo);
-            TeamOneScore.setText(teamOneScore);
-            TeamTwoScore.setText(teamTwoScore);
-            matchNumber.setText(matchnum);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
 
-            return myView;
-        }
+            }
+        });
+        RequestQueue requestQueue  = Volley.newRequestQueue(getActivity());
+        requestQueue.add(arrayRequest);
     }
+
 
 
 

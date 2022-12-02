@@ -20,6 +20,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/card"
             android:layout_marginTop="40dp"
             android:weightSum="5"
             android:orientation="horizontal"
@@ -45,7 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:text="A"
+                    android:text=""
                     android:textSize="60dp"/>
             </LinearLayout>
             <LinearLayout
@@ -69,7 +70,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
-                        android:text="1"
+                        android:text=""
                         android:textSize="70dp"/>
 
                 </LinearLayout>
@@ -92,7 +93,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textColor="@color/black"
-                            android:text="Match : 8"
+                            android:text="Match : "
                             android:textAlignment="center"/>
 
                     </LinearLayout>
@@ -140,7 +141,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
-                        android:text="1"
+                        android:text=""
                         android:textSize="70dp"/>
 
                 </LinearLayout>
@@ -166,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:text="A"
+                    android:text=""
                     android:textSize="60dp"/>
             </LinearLayout>
 
@@ -195,6 +196,7 @@
                     android:weightSum="5">
 
                     <LinearLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -205,9 +207,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_1_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="B"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -229,10 +232,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_1_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -289,7 +293,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                    android:text="10:00 PM
+4-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -304,10 +309,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_1_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -328,10 +334,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_1_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="D"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -360,6 +366,7 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_2_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="A"
@@ -384,10 +391,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_2_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -444,7 +452,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                    android:text="11:00 AM
+4-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -459,10 +468,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_2_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -483,10 +493,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_2_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="C"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -515,9 +525,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_3_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="E"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -539,10 +550,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_3_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -599,7 +611,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="11:50 AM
+4-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -614,10 +627,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_3_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -638,10 +652,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_3_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="H"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -670,9 +684,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_4_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="F"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -694,10 +709,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_4_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -754,7 +770,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="12:40 PM
+4-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -769,10 +786,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_4_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -793,10 +811,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_4_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="G"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -825,9 +843,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_5_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="H"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -849,10 +868,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_5_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -909,7 +929,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="02:00 PM
+4-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -924,10 +945,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_5_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -948,10 +970,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_5_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="B"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -980,9 +1002,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_6_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="B"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1004,10 +1027,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_6_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1064,7 +1088,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="11:00 AM
+5-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -1079,10 +1104,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_6_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1103,10 +1129,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_6_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="E"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1135,9 +1161,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_7_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="C"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1159,10 +1186,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_7_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1219,7 +1247,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="12:00 PM
+5-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -1234,10 +1263,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_7_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1258,10 +1288,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_7_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="G"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1290,9 +1320,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_8_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="D"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1314,10 +1345,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_8_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1374,7 +1406,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="12:50 PM
+5-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -1389,10 +1422,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_8_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1413,10 +1447,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_8_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="H"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1445,9 +1479,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_9_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="F"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1469,10 +1504,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_9_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1529,7 +1565,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="02:00 PM
+5-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -1544,10 +1581,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_9_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1568,7 +1606,7 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_9_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="A"
@@ -1600,9 +1638,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_10_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="D"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1624,10 +1663,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_10_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1684,7 +1724,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="03:00 PM
+5-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -1699,10 +1740,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_10_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1723,10 +1765,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_10_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="E"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1755,6 +1797,7 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_11_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="A"
@@ -1779,10 +1822,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_11_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1839,7 +1883,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="10:00 AM
+6-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -1854,10 +1899,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_11_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1878,10 +1924,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_11_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="G"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1910,9 +1956,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_12_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="C"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -1934,10 +1981,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_12_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -1959,6 +2007,7 @@
                                 >
 
                                 <TextView
+
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="20dp"
@@ -1976,6 +2025,7 @@
                                 >
 
                                 <TextView
+
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
@@ -1992,9 +2042,11 @@
                                 android:layout_weight="1.65">
 
                                 <TextView
+
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="12:00 PM
+6-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -2009,10 +2061,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_12_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -2033,10 +2086,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_12_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="F"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -2065,9 +2118,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_13_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="?"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -2089,10 +2143,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_13_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -2117,7 +2172,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="20dp"
-                                    android:text="Match : 13"
+                                    android:text="Semi final-1"
                                     android:textAlignment="center"
                                     android:textColor="@color/white" />
 
@@ -2149,7 +2204,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="01:00 PM
+6-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -2164,10 +2220,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_13_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -2188,10 +2245,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_13_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="?"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -2220,9 +2277,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_14_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="?"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -2244,10 +2302,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_14_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -2272,7 +2331,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="20dp"
-                                    android:text="Match : 14"
+                                    android:text="Semi final-2"
                                     android:textAlignment="center"
                                     android:textColor="@color/white" />
 
@@ -2304,7 +2363,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="02:00 PM
+6-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -2319,10 +2379,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_14_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -2343,10 +2404,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_14_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="?"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -2376,9 +2437,10 @@
                         android:background="@drawable/section_style">
 
                         <TextView
+                            android:id="@+id/live_15_tOne"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="?"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
@@ -2400,10 +2462,11 @@
                             >
 
                             <TextView
+                                android:id="@+id/live_15_tOneScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -2425,10 +2488,11 @@
                                 >
 
                                 <TextView
+
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="20dp"
-                                    android:text="Match : 15"
+                                    android:text="Final"
                                     android:textAlignment="center"
                                     android:textColor="@color/white" />
 
@@ -2442,6 +2506,7 @@
                                 >
 
                                 <TextView
+
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
@@ -2460,7 +2525,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:text="12:00PM"
+                                     android:text="11:00 AM
+7-12-22"
                                     android:textAlignment="center"
                                     android:textColor="#FFFFFF"
                                     android:textStyle="bold" />
@@ -2475,10 +2541,11 @@
                             android:layout_weight="1.8">
 
                             <TextView
+                                android:id="@+id/live_15_tTwoScore"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:text="1"
+                                android:text="?"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="70dp" />
@@ -2499,10 +2566,10 @@
                         android:background="@drawable/section_style_l">
 
                         <TextView
-
+                            android:id="@+id/live_15_tTwo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="A"
+                            android:text="?"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="60dp" />
