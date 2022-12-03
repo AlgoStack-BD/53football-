@@ -1,17 +1,22 @@
 package com.asm.a53btachfootball;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -29,7 +34,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class home extends Fragment {
+    ProgressBar progressBar;
     LinearLayout match1,match2,match3,match4,match5,match6,match7,match8,match9,match10,match11,match12,match13,match14,match15;
+
+    private CountDownTimer countDownTimer;
+
 
 
     String t1,t2,t1s,t2s,mn;
@@ -68,6 +77,8 @@ public class home extends Fragment {
 
 
         String url  = "https://cse53.algostackbd.com/liveupdate.php";
+        progressBar = view.findViewById(R.id.probarHome);
+        progressBar.setVisibility(View.VISIBLE);
 
         JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
@@ -76,30 +87,31 @@ public class home extends Fragment {
 
                 try {
 //                    for(int x=response.length()-1;x<response.length();x++){
-                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
+                    JSONObject jsonObject = response.getJSONObject(response.length()-1);
 
-                        TextView matchNumber = view.findViewById(R.id.live_matchNum);
-                        TextView TeamOne = view.findViewById(R.id.live_tOne);
-                        TextView TeamTwo = view.findViewById(R.id.live_tTwo);
-                        TextView TeamOneScore = view.findViewById(R.id.live_tOneScore);
-                        TextView TeamTwoScore = view.findViewById(R.id.live_tTwoScore);
-
-
-
-                        String id = jsonObject.getString("id");
-                        t1 = jsonObject.getString("team_one");
-                        t2 = jsonObject.getString("team_two");
-                        t1s = jsonObject.getString("team_one_score");
-                        t2s =  jsonObject.getString("team_two_score");
-                        mn = jsonObject.getString("match_number");
-                        TeamOne.setText(t1);
-                        TeamTwo.setText(t2);
-                        TeamOneScore.setText(t1s);
-                        TeamTwoScore.setText(t2s);
-                        matchNumber.setText("Match : " + mn);
+                    TextView matchNumber = view.findViewById(R.id.live_matchNum);
+                    TextView TeamOne = view.findViewById(R.id.live_tOne);
+                    TextView TeamTwo = view.findViewById(R.id.live_tTwo);
+                    TextView TeamOneScore = view.findViewById(R.id.live_tOneScore);
+                    TextView TeamTwoScore = view.findViewById(R.id.live_tTwoScore);
 
 
 
+                    String id = jsonObject.getString("id");
+                    t1 = jsonObject.getString("team_one");
+                    t2 = jsonObject.getString("team_two");
+                    t1s = jsonObject.getString("team_one_score");
+                    t2s =  jsonObject.getString("team_two_score");
+                    mn = jsonObject.getString("match_number");
+
+
+
+                    TeamOne.setText(t1);
+                    TeamTwo.setText(t2);
+                    TeamOneScore.setText(t1s);
+                    TeamTwoScore.setText(t2s);
+                    matchNumber.setText("Match : " + mn);
+                    progressBar.setVisibility(View.GONE);
 
                     //}
 
@@ -107,11 +119,15 @@ public class home extends Fragment {
                     e.printStackTrace();
                 }
 
+
+
+
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                progressBar.setVisibility(View.GONE);
 
             }
 

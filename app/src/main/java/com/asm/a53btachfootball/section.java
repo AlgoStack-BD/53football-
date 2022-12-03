@@ -126,6 +126,9 @@ public class section extends AppCompatActivity {
             String name = hashMap.get("name");
             String purl = hashMap.get("purl");
 
+            System.out.println("Photo position : "+position);
+            System.out.println("Photo load : "+purl);
+
             nameTxt.setText(name);
             Picasso.get().load(purl).placeholder(R.drawable.profileloading).into(imageView);
 //                                Picasso.get()

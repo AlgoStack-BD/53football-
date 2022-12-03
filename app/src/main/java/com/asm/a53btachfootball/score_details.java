@@ -3,6 +3,7 @@ package com.asm.a53btachfootball;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,9 +29,11 @@ import java.util.HashMap;
 
 public class score_details extends AppCompatActivity {
     ListView cardList;
-    ProgressBar progressBar;
+    ProgressBar progressBar ,progressBar2;
 
     TextView sec1,sec2,match,sec1score,sec2score;
+    Handler handler;
+    Runnable refresh;
 
     public static String code ="";
 //    public static String sec_1 = "";
@@ -49,6 +52,8 @@ public class score_details extends AppCompatActivity {
 
 
         progressBar = findViewById(R.id.progressBar);
+        progressBar2 = findViewById(R.id.probardel);
+        progressBar2.setVisibility(View.VISIBLE);
         progressBar.setVisibility(View.VISIBLE);
        cardList = findViewById(R.id.cardItemList);
 
@@ -66,6 +71,8 @@ public class score_details extends AppCompatActivity {
         JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url2, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+
+
 
 
                 try {
@@ -87,11 +94,14 @@ public class score_details extends AppCompatActivity {
                     String tOneScore = jsonObject.getString("team_one_score");
                     String tTwoScore = jsonObject.getString("team_two_score");
 
+
+
                     sec1.setText(tOne);
                     sec2.setText(tTwo);
                     sec1score.setText(tOneScore);
                     sec2score.setText(tTwoScore);
                     match.setText("Match : " + mNum);
+                    progressBar2.setVisibility(View.GONE);
 
 
                     //}
@@ -104,6 +114,7 @@ public class score_details extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressBar2.setVisibility(View.VISIBLE);
 
 
             }

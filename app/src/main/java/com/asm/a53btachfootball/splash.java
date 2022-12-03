@@ -10,7 +10,7 @@ import android.os.Handler;
 
 public class splash extends AppCompatActivity {
 
-    private static int ss=2000;
+    private static int SPLASH_SCREEN = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +23,8 @@ public class splash extends AppCompatActivity {
                 Intent intent = new Intent(splash.this,MainActivity.class);
                 startActivity(intent);
                 finish();
-
             }
-        },ss);
-
+        },SPLASH_SCREEN);
 
     }
 

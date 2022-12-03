@@ -28,6 +28,13 @@
             android:layout_width="350dp"
             android:layout_height="120dp"
             android:background="@drawable/card_style">
+            <ProgressBar
+                android:id="@+id/probarHome"
+                android:layout_margin="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ProgressBar>
 
             <LinearLayout
 
@@ -46,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:text=""
+                    android:text="?"
                     android:textSize="60dp"/>
             </LinearLayout>
             <LinearLayout
@@ -70,7 +77,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
-                        android:text=""
+                        android:text="?"
                         android:textSize="70dp"/>
 
                 </LinearLayout>
@@ -93,7 +100,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:textColor="@color/black"
-                            android:text="Match : "
+                            android:text="Match : ?"
                             android:textAlignment="center"/>
 
                     </LinearLayout>
@@ -141,7 +148,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
-                        android:text=""
+                        android:text="?"
                         android:textSize="70dp"/>
 
                 </LinearLayout>
@@ -167,7 +174,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:text=""
+                    android:text="?"
                     android:textSize="60dp"/>
             </LinearLayout>
 

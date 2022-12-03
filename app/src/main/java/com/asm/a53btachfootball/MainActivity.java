@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,6 +42,9 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
+    Dialog myDialog;
+
+    TextView txtclose;
 
     BottomNavigationView btNav;
 
@@ -46,6 +52,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        myDialog = new Dialog(this);
+        myDialog.setContentView(R.layout.coustompopup);
+        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        txtclose.setText("X");
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+
         btNav=findViewById(R.id.bt_nav);
 
 
@@ -67,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
 
                     loadFrg(new player(),false);
 
+                }
+                else if (id==R.id.nav_point){
+
+                    loadFrg(new point_table(),false);
+
+                }
+                else{
+                    loadFrg(new about(),false);
                 }
 
 
