@@ -29,7 +29,15 @@ import java.util.HashMap;
 public class score_details extends AppCompatActivity {
     ListView cardList;
     ProgressBar progressBar;
+
+    TextView sec1,sec2,match,sec1score,sec2score;
+
     public static String code ="";
+    public static String sec_1 = "";
+    public static String sec_2 = "";
+    public static String sec_score_1 = "";
+    public static String  sec_score_2 = "";
+    public static String matchnum = "";
 
         ArrayList<HashMap<String,String>> arrayList = new ArrayList<>();
         HashMap<String,String> hashMap;
@@ -43,6 +51,19 @@ public class score_details extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
        cardList = findViewById(R.id.cardItemList);
+
+        sec1=findViewById(R.id.score_sec_1);
+        sec2=findViewById(R.id.score_sec_2);
+        sec1score=findViewById(R.id.score_sec_1_score);
+        sec2score=findViewById(R.id.score_sec_2_score);
+        match=findViewById(R.id.score_match_score);
+
+
+        sec1.setText(sec_1);
+        sec2.setText(sec_2);
+        sec1score.setText(sec_score_1);
+        sec2score.setText(sec_score_2);
+        match.setText(matchnum);
 
 
 
@@ -69,11 +90,6 @@ public class score_details extends AppCompatActivity {
                         String goalSection = jsonObject.getString("goal_section_name");
                         String goalPlayer = jsonObject.getString("goal_player_name");
 
-
-
-
-
-
                         hashMap = new HashMap<>();
                         hashMap.put ("tOne",tOne);
                         hashMap.put ("tTwo",tTwo);
@@ -83,6 +99,8 @@ public class score_details extends AppCompatActivity {
                         hashMap.put ("goalSection",goalSection);
                         hashMap.put ("goalPlayer",goalPlayer);
                         arrayList.add(hashMap);
+
+
 
                     }
                         if(arrayList.size()>0){
