@@ -37,10 +37,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity { ProgressBar progressBar;
-//    ListView listView;
-//    ArrayList<HashMap<String,String>> arrayList = new ArrayList<>();
-//    HashMap<String,String>  hashMap;
+public class MainActivity extends AppCompatActivity {
+    ProgressBar progressBar;
+
     BottomNavigationView btNav;
 
     @Override
@@ -69,11 +68,7 @@ public class MainActivity extends AppCompatActivity { ProgressBar progressBar;
                     loadFrg(new player(),false);
 
                 }
-//                else {
-//
-//                    loadFrg(new search(),false);
-//
-//                }
+
 
                 return true;
             }
@@ -82,73 +77,6 @@ public class MainActivity extends AppCompatActivity { ProgressBar progressBar;
         btNav.setSelectedItemId(R.id.nav_profile);
 
 
-
-
-
-
-//        progressBar= findViewById(R.id.progressBar);
-//        listView = findViewById(R.id.list_view);
-
-
-
-//        String url  = "https://cse53.algostackbd.com/demo_data.php?i=4";
-//
-//        JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
-//            @Override
-//            public void onResponse(JSONArray response) {
-//                progressBar.setVisibility(View.GONE);
-//
-//                try {
-//
-//
-//                    for (int x=response.length()-1; x < response.length();x++){
-//                        JSONObject jsonObject = response.getJSONObject(x);
-////                        String videoTitle = jsonObject.getString("videoTitle");
-////                        String videoId = jsonObject.getString("videoId");
-////
-////                        hashMap  = new HashMap<>();
-////                        hashMap.put("videoTitle", videoTitle);
-////                        hashMap.put("videoId", videoId);
-////                        arrayList.add(hashMap);
-//
-//                        String id = jsonObject.getString("id");
-//                        String match_number = jsonObject.getString("match_number");
-//                        String team_one = jsonObject.getString("team_one");
-//                        String team_two = jsonObject.getString("team_two");
-//                        String team_one_score = jsonObject.getString("team_one_score");
-//                        String team_two_score = jsonObject.getString("team_two_score");
-//
-//                        hashMap= new HashMap<>();
-//                        hashMap.put("id",id);
-//                        hashMap.put("match_number",match_number);
-//                        hashMap.put("team_one",team_one);
-//                        hashMap.put("team_two",team_two);
-//                        hashMap.put("team_one_score",team_one_score);
-//                        hashMap.put("team_two_score",team_two_score);
-//                        arrayList.add(hashMap);
-//
-//                    }
-//
-//                    Myadapter myAdapter = new Myadapter();
-//                    listView.setAdapter(myAdapter);
-//
-//
-//
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                progressBar.setVisibility(View.GONE);
-//
-//            }
-//        });
-//        RequestQueue requestQueue  = Volley.newRequestQueue(MainActivity.this);
-//        requestQueue.add(arrayRequest);
     }
 
 

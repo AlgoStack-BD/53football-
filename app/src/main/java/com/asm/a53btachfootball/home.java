@@ -32,6 +32,8 @@ public class home extends Fragment {
     LinearLayout match1,match2,match3,match4,match5,match6,match7,match8,match9,match10,match11,match12,match13,match14,match15;
 
 
+    String t1,t2,t1s,t2s,mn;
+
     ListView listView;
     ArrayList<HashMap<String,String>> arrayList = new ArrayList<>();
     HashMap<String,String>  hashMap;
@@ -45,7 +47,6 @@ public class home extends Fragment {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
 
         loadScore(Integer.parseInt("1"),view);
         loadScore(Integer.parseInt("2"),view);
@@ -64,7 +65,9 @@ public class home extends Fragment {
         loadScore(Integer.parseInt("15"),view);
 
 
-       String url  = "https://cse53.algostackbd.com/liveupdate.php";
+
+
+        String url  = "https://cse53.algostackbd.com/liveupdate.php";
 
         JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
@@ -72,8 +75,8 @@ public class home extends Fragment {
 
 
                 try {
-                    for(int x=response.length()-1;x<response.length();x++){
-                        JSONObject jsonObject = response.getJSONObject(x);
+//                    for(int x=response.length()-1;x<response.length();x++){
+                        JSONObject jsonObject = response.getJSONObject(response.length()-1);
 
                         TextView matchNumber = view.findViewById(R.id.live_matchNum);
                         TextView TeamOne = view.findViewById(R.id.live_tOne);
@@ -82,14 +85,23 @@ public class home extends Fragment {
                         TextView TeamTwoScore = view.findViewById(R.id.live_tTwoScore);
 
 
-                        String id = jsonObject.getString("id");
-                        TeamOne.setText(jsonObject.getString("team_one"));
-                        TeamTwo.setText(jsonObject.getString("team_two"));
-                        TeamOneScore.setText(jsonObject.getString("team_one_score"));
-                        TeamTwoScore.setText(jsonObject.getString("team_two_score"));
-                        matchNumber.setText("Match : " + jsonObject.getString("match_number"));
 
-                    }
+                        String id = jsonObject.getString("id");
+                        t1 = jsonObject.getString("team_one");
+                        t2 = jsonObject.getString("team_two");
+                        t1s = jsonObject.getString("team_one_score");
+                        t2s =  jsonObject.getString("team_two_score");
+                        mn = jsonObject.getString("match_number");
+                        TeamOne.setText(t1);
+                        TeamTwo.setText(t2);
+                        TeamOneScore.setText(t1s);
+                        TeamTwoScore.setText(t2s);
+                        matchNumber.setText("Match : " + mn);
+
+
+
+
+                    //}
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -106,6 +118,7 @@ public class home extends Fragment {
         });
         RequestQueue requestQueue  = Volley.newRequestQueue(getActivity());
         requestQueue.add(arrayRequest);
+
 
 
 
@@ -131,6 +144,9 @@ public class home extends Fragment {
            @Override
            public void onClick(View v) {
                score_details.code ="1";
+
+
+
                startActivity(new Intent(getActivity(),score_details.class));
 
 
@@ -281,10 +297,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+
 
 
 
@@ -301,10 +314,7 @@ public class home extends Fragment {
                            TeamOneScore.setText(jsonObject.getString("team_one_score"));
                            TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                        }
                     else if(code==3){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -317,10 +327,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==4){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -333,10 +340,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==5){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -349,10 +353,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==6){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -365,10 +366,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==7){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -381,10 +379,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
 
 
                     }
@@ -399,10 +394,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==9){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -415,10 +407,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==10){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -431,10 +420,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==11){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -447,10 +433,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==12){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -463,10 +446,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==13){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -479,10 +459,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==14){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -495,10 +472,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
                     else if(code==15){
                         JSONObject jsonObject = response.getJSONObject(response.length()-1);
@@ -511,10 +485,7 @@ public class home extends Fragment {
                         TeamOneScore.setText(jsonObject.getString("team_one_score"));
                         TeamTwoScore.setText(jsonObject.getString("team_two_score"));
 
-                        score_details.sec_1 = String.valueOf(jsonObject.getString("team_one"));
-                        score_details.sec_2 = String.valueOf(jsonObject.getString("team_two"));
-                        score_details.sec_score_1 = String.valueOf(jsonObject.getString("team_one_score"));
-                        score_details.sec_score_2 = String.valueOf(jsonObject.getString("team_two_score"));
+                        
                     }
 
 

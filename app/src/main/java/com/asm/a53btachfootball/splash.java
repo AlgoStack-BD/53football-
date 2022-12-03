@@ -6,33 +6,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 public class splash extends AppCompatActivity {
+
+    private static int ss=2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        Thread thread = new Thread(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                try {
-                    sleep(2000);
-                    Intent intent = new Intent(splash.this,MainActivity.class);
-                    startActivity(intent);
-                    finish();
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+                Intent intent = new Intent(splash.this,MainActivity.class);
+                startActivity(intent);
+                finish();
 
             }
+        },ss);
 
-        });
-        thread.start();
 
     }
 

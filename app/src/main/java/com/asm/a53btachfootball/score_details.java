@@ -33,11 +33,11 @@ public class score_details extends AppCompatActivity {
     TextView sec1,sec2,match,sec1score,sec2score;
 
     public static String code ="";
-    public static String sec_1 = "";
-    public static String sec_2 = "";
-    public static String sec_score_1 = "";
-    public static String  sec_score_2 = "";
-    public static String matchnum = "";
+//    public static String sec_1 = "";
+//    public static String sec_2 = "";
+//    public static String sec_score_1 = "";
+//    public static String  sec_score_2 = "";
+//    public static String matchnum = "";
 
         ArrayList<HashMap<String,String>> arrayList = new ArrayList<>();
         HashMap<String,String> hashMap;
@@ -59,11 +59,58 @@ public class score_details extends AppCompatActivity {
         match=findViewById(R.id.score_match_score);
 
 
-        sec1.setText(sec_1);
-        sec2.setText(sec_2);
-        sec1score.setText(sec_score_1);
-        sec2score.setText(sec_score_2);
-        match.setText(matchnum);
+
+
+        String url2  = "https://cse53.algostackbd.com/demo_data.php?i="+code;
+
+        JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url2, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+
+                try {
+//                    for(int x=response.length()-1;x<response.length();x++){
+                    JSONObject jsonObject = response.getJSONObject(response.length()-1);
+
+//                    String mNum = jsonObject.getString("match_number");
+//                    String tOne = jsonObject.getString("team_one");
+//                    String tTwo = jsonObject.getString("team_two");
+//                    String tOneScore = jsonObject.getString("team_one_score");
+//                    String tTwoScore = jsonObject.getString("team_two_score");
+
+
+
+
+                    String mNum = jsonObject.getString("match_number");
+                    String tOne = jsonObject.getString("team_one");
+                    String tTwo = jsonObject.getString("team_two");
+                    String tOneScore = jsonObject.getString("team_one_score");
+                    String tTwoScore = jsonObject.getString("team_two_score");
+
+                    sec1.setText(tOne);
+                    sec2.setText(tTwo);
+                    sec1score.setText(tOneScore);
+                    sec2score.setText(tTwoScore);
+                    match.setText("Match : " + mNum);
+
+
+                    //}
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+
+            }
+
+        });
+        RequestQueue requestQueue  = Volley.newRequestQueue(score_details.this);
+        requestQueue.add(arrayRequest);
 
 
 
@@ -81,20 +128,12 @@ public class score_details extends AppCompatActivity {
                         JSONObject jsonObject = response.getJSONObject(x);
 
                         String id = jsonObject.getString("id");
-                        String mNum = jsonObject.getString("match_number");
-                        String tOne = jsonObject.getString("team_one");
-                        String tTwo = jsonObject.getString("team_two");
-                        String tOneScore = jsonObject.getString("team_one_score");
-                        String tTwoScore = jsonObject.getString("team_two_score");
+
                         String goalTime = jsonObject.getString("goal_time");
                         String goalSection = jsonObject.getString("goal_section_name");
                         String goalPlayer = jsonObject.getString("goal_player_name");
 
                         hashMap = new HashMap<>();
-                        hashMap.put ("tOne",tOne);
-                        hashMap.put ("tTwo",tTwo);
-                        hashMap.put ("tOneScore",tOneScore);
-                        hashMap.put ("tTwoScore",tTwoScore);
                         hashMap.put ("goalTime",goalTime);
                         hashMap.put ("goalSection",goalSection);
                         hashMap.put ("goalPlayer",goalPlayer);
@@ -123,8 +162,8 @@ public class score_details extends AppCompatActivity {
 
             }
         });
-        RequestQueue requestQueue = Volley.newRequestQueue(score_details.this);
-        requestQueue.add(jsonArrayRequest);
+        RequestQueue requestQueuee = Volley.newRequestQueue(score_details.this);
+        requestQueuee.add(jsonArrayRequest);
 
 
 
@@ -159,10 +198,10 @@ public class score_details extends AppCompatActivity {
 
 
             hashMap = arrayList.get(position);
-            String teamOne = hashMap.get("tOne");
-            String teamTwo = hashMap.get("tTwo");
-            String teamOneScore = hashMap.get("tOneScore");
-            String teamTwoScore = hashMap.get("tTwoScore");
+//            String teamOne = hashMap.get("tOne");
+//            String teamTwo = hashMap.get("tTwo");
+//            String teamOneScore = hashMap.get("tOneScore");
+//            String teamTwoScore = hashMap.get("tTwoScore");
             String gTime = hashMap.get("goalTime");
             String gSection = hashMap.get("goalSection");
             String gPlayer = hashMap.get("goalPlayer");
