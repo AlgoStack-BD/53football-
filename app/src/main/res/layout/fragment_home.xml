@@ -20,7 +20,7 @@
         >
 
         <LinearLayout
-            android:id="@+id/card"
+            android:id="@+id/cardi"
             android:layout_marginTop="40dp"
             android:weightSum="5"
             android:orientation="horizontal"

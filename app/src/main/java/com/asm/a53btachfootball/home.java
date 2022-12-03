@@ -5,10 +5,15 @@ import static android.content.ContentValues.TAG;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,12 +38,18 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class home extends Fragment {
+
     ProgressBar progressBar;
     LinearLayout match1,match2,match3,match4,match5,match6,match7,match8,match9,match10,match11,match12,match13,match14,match15;
 
-    private CountDownTimer countDownTimer;
+
+
+
+
 
 
 
@@ -49,14 +61,21 @@ public class home extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+
+
+
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+      
         loadScore(Integer.parseInt("1"),view);
         loadScore(Integer.parseInt("2"),view);
         loadScore(Integer.parseInt("3"),view);
@@ -85,8 +104,10 @@ public class home extends Fragment {
             public void onResponse(JSONArray response) {
 
 
+
+
                 try {
-//                    for(int x=response.length()-1;x<response.length();x++){
+
                     JSONObject jsonObject = response.getJSONObject(response.length()-1);
 
                     TextView matchNumber = view.findViewById(R.id.live_matchNum);
@@ -105,7 +126,6 @@ public class home extends Fragment {
                     mn = jsonObject.getString("match_number");
 
 
-
                     TeamOne.setText(t1);
                     TeamTwo.setText(t2);
                     TeamOneScore.setText(t1s);
@@ -113,7 +133,7 @@ public class home extends Fragment {
                     matchNumber.setText("Match : " + mn);
                     progressBar.setVisibility(View.GONE);
 
-                    //}
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -283,6 +303,8 @@ public class home extends Fragment {
 
             }
         });
+
+
 
 
 
@@ -523,6 +545,8 @@ public class home extends Fragment {
         RequestQueue requestQueue  = Volley.newRequestQueue(getActivity());
         requestQueue.add(arrayRequest);
     }
+
+
 
 
 

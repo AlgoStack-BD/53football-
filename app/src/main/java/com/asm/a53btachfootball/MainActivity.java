@@ -1,5 +1,6 @@
 package com.asm.a53btachfootball;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -52,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MainActivity.this.getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finishAffinity();
+                finish();
+
+            }
+        });
 
         myDialog = new Dialog(this);
         myDialog.setContentView(R.layout.coustompopup);

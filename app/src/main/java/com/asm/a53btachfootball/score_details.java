@@ -1,7 +1,9 @@
 package com.asm.a53btachfootball;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -49,6 +51,19 @@ public class score_details extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_details);
+
+        score_details.this.getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+
+                startActivity(new Intent(score_details.this,MainActivity.class));
+
+
+
+
+
+            }
+        });
 
 
         progressBar = findViewById(R.id.progressBar);

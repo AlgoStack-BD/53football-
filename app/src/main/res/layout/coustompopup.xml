@@ -2,15 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
     android:layout_height="600dp"
-    android:background="#162029"
+    android:background="@drawable/card_style_ad"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:padding="5dp">
+    android:padding="5dp"
+    >
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
         android:id="@+id/txtclose"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:textColor="@color/white"
         android:text="X"
         android:textStyle="bold"
