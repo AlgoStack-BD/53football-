@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -47,13 +48,8 @@ public class home extends Fragment {
     LinearLayout match1,match2,match3,match4,match5,match6,match7,match8,match9,match10,match11,match12,match13,match14,match15;
 
 
-
-
-
-
-
-
     String t1,t2,t1s,t2s,mn;
+    Button refresh;
 
     ListView listView;
     ArrayList<HashMap<String,String>> arrayList = new ArrayList<>();
@@ -98,6 +94,7 @@ public class home extends Fragment {
         String url  = "https://cse53.algostackbd.com/liveupdate.php";
         progressBar = view.findViewById(R.id.probarHome);
         progressBar.setVisibility(View.VISIBLE);
+        refresh = view.findViewById(R.id.refresh);
 
         JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
@@ -154,6 +151,83 @@ public class home extends Fragment {
         });
         RequestQueue requestQueue  = Volley.newRequestQueue(getActivity());
         requestQueue.add(arrayRequest);
+
+
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadScore(Integer.parseInt("1"),view);
+                loadScore(Integer.parseInt("2"),view);
+                loadScore(Integer.parseInt("3"),view);
+                loadScore(Integer.parseInt("4"),view);
+                loadScore(Integer.parseInt("5"),view);
+                loadScore(Integer.parseInt("6"),view);
+                loadScore(Integer.parseInt("7"),view);
+                loadScore(Integer.parseInt("8"),view);
+                loadScore(Integer.parseInt("9"),view);
+                loadScore(Integer.parseInt("10"),view);
+                loadScore(Integer.parseInt("11"),view);
+                loadScore(Integer.parseInt("12"),view);
+                loadScore(Integer.parseInt("13"),view);
+                loadScore(Integer.parseInt("14"),view);
+                loadScore(Integer.parseInt("15"),view);
+                JsonArrayRequest arrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+
+
+
+
+                        try {
+
+                            JSONObject jsonObject = response.getJSONObject(response.length()-1);
+
+                            TextView matchNumber = view.findViewById(R.id.live_matchNum);
+                            TextView TeamOne = view.findViewById(R.id.live_tOne);
+                            TextView TeamTwo = view.findViewById(R.id.live_tTwo);
+                            TextView TeamOneScore = view.findViewById(R.id.live_tOneScore);
+                            TextView TeamTwoScore = view.findViewById(R.id.live_tTwoScore);
+
+
+
+                            String id = jsonObject.getString("id");
+                            t1 = jsonObject.getString("team_one");
+                            t2 = jsonObject.getString("team_two");
+                            t1s = jsonObject.getString("team_one_score");
+                            t2s =  jsonObject.getString("team_two_score");
+                            mn = jsonObject.getString("match_number");
+
+
+                            TeamOne.setText(t1);
+                            TeamTwo.setText(t2);
+                            TeamOneScore.setText(t1s);
+                            TeamTwoScore.setText(t2s);
+                            matchNumber.setText("Match : " + mn);
+                            progressBar.setVisibility(View.GONE);
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+
+
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressBar.setVisibility(View.GONE);
+
+                    }
+
+                });
+                RequestQueue requestQueue  = Volley.newRequestQueue(getActivity());
+                requestQueue.add(arrayRequest);
+            }
+        });
 
 
 
